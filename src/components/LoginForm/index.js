@@ -14,7 +14,46 @@ class LoginForm extends Component {
     errorMsg: '',
   }
 
-  onChangeUsername = event => {}
+  onChangeUsername = event => {
+    this.setState({username: event.target.value})
+  }
+
+  onChangePassword = event => {
+    this.setState({password: event.target.value})
+  }
+
+  onSubmitSuccess = jwtToken => {
+    const {history} = this.props
+
+    Cookies.set('jobby_jwt_token', jwtToken, {
+      expires: 30,
+    })
+
+    history.replace('/')
+  }
+
+  onSubmitFailure = errorMsg => {
+    this.setState({showErrorMsg: true, errorMsg})
+  }
+
+  onSubmitForm = async event => {
+    event.preventDefault()
+    const {username, password} = this.state
+    const userDetails = {username, password}
+    const url = 'https://apis.ccbp.in/login'
+    const options = {
+      method: 'POST',
+      body: JSON.stringify(userDetails),
+    }
+    const response = await fetch(url, options)
+    const data = await response.json()
+    console.log(data)
+    if (response.ok) {
+      this.onSubmitSuccess(data.jwt_token)
+    } else {
+      this.onSubmitFailure(data.error_msg)
+    }
+  }
 
   renderUsernameInput = () => {
     const {username} = this.state
@@ -38,7 +77,7 @@ class LoginForm extends Component {
       <>
         <label htmlFor="password">PASSWORD</label>
         <input
-          type="text"
+          type="password"
           id="password"
           value={password}
           onChange={this.onChangePassword}
@@ -49,7 +88,8 @@ class LoginForm extends Component {
   }
 
   render() {
-    const {showErrorMsg, errorMsg} = this.state
+    const {showErrorMsg, errorMsg, username, password} = this.state
+    console.log(username, password)
     const jwtToken = Cookies.get('jobby_jwt_token')
     if (jwtToken !== undefined) {
       return <Redirect to="/" />
