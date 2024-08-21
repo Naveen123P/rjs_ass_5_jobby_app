@@ -1,0 +1,49 @@
+.mobile-view {
+  background-color: #272727;
+  width: 100%;
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0px;
+  height: 5rem;
+}
+
+.icon {
+  height: 2rem;
+  width: 2rem;
+  margin: 0rem 0.5rem 0rem 0.5rem;
+}
+.header-logo {
+  height: 2rem;
+  width: 5rem;
+}
+.desktop-view {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .mobile-view {
+    display: none;
+  }
+  .desktop-view {
+    background-color: #272727;
+    display: flex;
+    padding: 1rem 3rem 1rem 3rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logout-button {
+    margin-top: 0px;
+    padding: 0.1rem 1.5rem 0.1rem 1.5rem;
+    height: 3rem;
+    cursor: pointer;
+  }
+  .link {
+    text-decoration: none;
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+  .link:hover {
+    text-decoration: underline;
+  }
+}

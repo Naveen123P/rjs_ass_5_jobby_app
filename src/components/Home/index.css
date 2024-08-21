@@ -1,0 +1,31 @@
+.home-bg {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/home-sm-bg.png');
+  background-size: cover;
+  margin-top: 0px;
+  height: calc(100vh - 5rem);
+  padding: 1rem;
+}
+button {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .home-bg {
+    background-image: url('https://assets.ccbp.in/frontend/react-js/home-lg-bg.png');
+    padding: 10rem 3rem 0rem 3rem;
+  }
+  .content-con {
+    width: 60%;
+  }
+  h1 {
+    font-size: xx-large;
+  }
+  p {
+    font-size: x-large;
+  }
+  button {
+    font-size: x-large;
+    padding: 1rem 2rem 1rem 2rem;
+    height: auto;
+  }
+}

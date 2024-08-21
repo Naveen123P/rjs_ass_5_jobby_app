@@ -1,7 +1,8 @@
 * {
   box-sizing: border-box;
   font-family: 'Roboto';
-  background-color: black;
+  color: black;
+  /* background-color: black; */
 }
 
 body {
