@@ -52,8 +52,15 @@ class FilterJobs extends Component {
           <h1 className="heading">Type of Employment</h1>
           {employmentTypesList.map(each => (
             <div className="employment-item-container">
-              <input type="checkbox" value={each.employmentTypeId} />
-              <p className="para">{each.label}</p>
+              <input
+                type="checkbox"
+                id={each.employmentTypeId}
+                value={each.employmentTypeId}
+              />
+              <label htmlFor={each.employmentTypeId} className="para">
+                {each.label}
+              </label>{' '}
+              <br />
             </div>
           ))}
         </div>
@@ -62,8 +69,16 @@ class FilterJobs extends Component {
           <h1 className="heading">Salary Range</h1>
           {salaryRangesList.map(each => (
             <div className="salary-item-container">
-              <input type="radio" value={each.salaryRangeId} />
-              <p className="para">{each.label}</p>
+              <input
+                type="radio"
+                id={each.salaryRangeId}
+                name="salary"
+                value={each.salaryRangeId}
+              />
+              <label htmlFor={each.salaryRangeId} className="para">
+                {each.label}
+              </label>{' '}
+              <br />
             </div>
           ))}
         </div>

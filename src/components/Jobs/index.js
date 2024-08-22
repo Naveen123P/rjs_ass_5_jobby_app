@@ -1,6 +1,6 @@
 import {Component} from 'react'
 import {FaSearch} from 'react-icons/fa'
-
+import Header from '../Header'
 import Profile from '../Profile'
 import FilterJobs from '../FilterJobs'
 
@@ -13,20 +13,25 @@ class Jobs extends Component {
 
   render() {
     return (
-      <div className="jobs-container">
-        <div className="search-input-container">
-          <input
-            type="text"
-            placeholder="Search"
-            onChange={this.onChangeSearch}
-            className="search-input"
-          />
-          <FaSearch className="search-icon" />
+      <>
+        <Header />
+        <div className="jobs-container">
+          <div className="search-input-container">
+            <input
+              type="search"
+              placeholder="Search"
+              onChange={this.onChangeSearch}
+              className="search-input"
+            />
+            <div className="search-icon-container">
+              <FaSearch className="search-icon" />
+            </div>
+          </div>
+          <Profile />
+          <hr />
+          <FilterJobs />
         </div>
-        <Profile />
-        <hr />
-        <FilterJobs />
-      </div>
+      </>
     )
   }
 }

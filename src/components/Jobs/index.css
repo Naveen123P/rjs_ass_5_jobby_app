@@ -1,0 +1,23 @@
+.jobs-container {
+  background-color: #000000;
+  padding: 1rem;
+}
+.search-input-container {
+  display: flex;
+  border: 1px solid #ffffff;
+  align-items: center;
+  padding: 0%;
+  height: 2.5rem;
+}
+.search-input:focus {
+  border: none;
+  outline: none;
+}
+.search-input {
+  border: none !important;
+  padding: 0.5rem 0rem 0.7rem 1rem;
+}
+.search-icon-container {
+  background-color: #272727;
+  padding: 0.6rem 1rem 0.4rem 1rem;
+}
