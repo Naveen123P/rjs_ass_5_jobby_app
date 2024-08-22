@@ -7,13 +7,15 @@ const Home = () => (
     <Header />
     <div className="home-bg">
       <div className="content-con">
-        <h1 className="">Find The Job That Fits Your Life</h1>
-        <p>
+        <h1 className="h1">Find The Job That Fits Your Life</h1>
+        <p className="p">
           Millions of people are searching for jobs, salary information, company
           reviews. Find the job that fits your abilities and potential.
         </p>
         <Link to="/jobs">
-          <button type="button">Find Jobs</button>
+          <button type="button" className="button">
+            Find Jobs
+          </button>
         </Link>
       </div>
     </div>

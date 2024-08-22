@@ -17,13 +17,13 @@ button {
   .content-con {
     width: 60%;
   }
-  h1 {
+  .h1 {
     font-size: xx-large;
   }
-  p {
+  .p {
     font-size: x-large;
   }
-  button {
+  .button {
     font-size: x-large;
     padding: 1rem 2rem 1rem 2rem;
     height: auto;

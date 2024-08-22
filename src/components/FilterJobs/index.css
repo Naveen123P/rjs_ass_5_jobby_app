@@ -1,0 +1,23 @@
+.employment-type-container {
+  /* min-height: 15rem; */
+}
+.employment-item-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.checkbox-input {
+  height: 1.3rem;
+  width: 1.3rem;
+  margin-right: 10px;
+  padding: 0px;
+  background-color: aquamarine;
+}
+.para {
+  align-self: center;
+  font-size: large;
+  padding-bottom: 3%;
+}
+.heading {
+  font-size: medium;
+}

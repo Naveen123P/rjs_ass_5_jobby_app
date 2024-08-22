@@ -21,3 +21,25 @@
   background-color: #272727;
   padding: 0.6rem 1rem 0.4rem 1rem;
 }
+
+.loader-container {
+  margin-left: calc(50% - 1rem);
+  padding: 0px;
+}
+.failure-img {
+  min-height: 1rem;
+  min-width: 3rem;
+  max-width: 15rem;
+  max-height: 15rem;
+  margin: 0px;
+  margin-left: calc(50% - 8rem);
+}
+.button {
+  margin: 0px;
+  margin-left: calc(50% - 1.5rem);
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}

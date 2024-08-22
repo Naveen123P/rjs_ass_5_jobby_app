@@ -1,0 +1,30 @@
+.profile-bg {
+  text-align: center;
+  min-height: 10rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.success-profile-bg {
+  text-align: left;
+  padding: 1rem;
+  background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
+  background-size: cover;
+  /* height: 10rem; */
+  border-radius: 1rem;
+}
+.username {
+  color: #6366f1;
+  font-size: x-large;
+  font-weight: bold;
+  margin: 4px;
+}
+.short-bio {
+  color: #2c364c;
+  margin: 4px;
+}
+.profile-retry-button {
+  margin-top: 25%;
+}
+.loader-container {
+  margin-top: 25%;
+}
