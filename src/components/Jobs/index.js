@@ -150,29 +150,47 @@ class Jobs extends Component {
     this.setState({minimumPackage: value}, this.getJobsList)
   }
 
-  render() {
+  renderInputSearch = () => {
     const {search} = this.state
+    return (
+      <div className="search-input-container">
+        <input
+          type="search"
+          placeholder="Search"
+          value={search}
+          onKeyDown={this.onEnterSearchKey}
+          onChange={this.onChangeSearch}
+          className="search-input"
+        />
+        <div className="search-icon-container">
+          <FaSearch className="search-icon" onClick={this.getJobsList} />
+        </div>
+      </div>
+    )
+  }
+
+  render() {
     return (
       <>
         <Header />
-        <div className="jobs-container">
-          <div className="search-input-container">
-            <input
-              type="search"
-              placeholder="Search"
-              value={search}
-              onKeyDown={this.onEnterSearchKey}
-              onChange={this.onChangeSearch}
-              className="search-input"
-            />
-            <div className="search-icon-container">
-              <FaSearch className="search-icon" onClick={this.getJobsList} />
-            </div>
-          </div>
+        <div className="mobile-jobs-container">
+          {this.renderInputSearch()}
           <Profile />
           <hr />
           <FilterJobs changeSalary={this.changeSalary} />
+          <hr />
           {this.renderAllApiStatusView()}
+        </div>
+        <div className="desktop-jobs-container">
+          <div className="profile-filters-container">
+            <Profile />
+            <hr />
+            <FilterJobs changeSalary={this.changeSalary} />
+          </div>
+          <div className="search-jobs-container">
+            {this.renderInputSearch()}
+            {this.renderAllApiStatusView()}
+          </div>
         </div>
       </>
     )

@@ -4,6 +4,7 @@ import LoginForm from './components/LoginForm'
 import Home from './components/Home'
 import Jobs from './components/Jobs'
 import NotFound from './components/NotFound'
+import jobItemDetails from './components/JobItemDetails'
 import ProtectedRoute from './components/ProtectedRoute'
 
 import './App.css'
@@ -18,6 +19,7 @@ class App extends Component {
         <Route exact path="/login" component={LoginForm} />
         <ProtectedRoute exact path="/" component={Home} />
         <ProtectedRoute exact path="/jobs" component={Jobs} />
+        <ProtectedRoute exact path="/jobs/:id" component={jobItemDetails} />
         <Route path="/not-found" component={NotFound} />
         <Redirect to="not-found" />
       </Switch>

@@ -56,3 +56,13 @@ span {
   font-size: x-large;
   margin-right: 2px;
 }
+
+.job-item-link {
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+  .job-item {
+    margin: 1rem 0rem 1rem 0rem;
+  }
+}

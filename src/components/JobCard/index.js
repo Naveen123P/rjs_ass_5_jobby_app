@@ -20,32 +20,38 @@ const JobCard = props => {
 
   return (
     <li className="job-item">
-      <div className="logo-container">
-        <img src={companyLogoUrl} alt="company logo" className="company-logo" />
-        <div className="role-container">
-          <p className="role">{title}</p>
-          <FaStar className="star-icon" />
-          <span>{rating}</span>
-        </div>
-      </div>
-      <div className="location-employment-salary-container">
-        <div className="flex">
-          <div className="location-container flex">
-            <MdLocationOn className="icon1" />
-            <p className="paragraph inline">{location}</p>
-          </div>
-          <div className="employment-container flex">
-            <IoBagSharp className="icon1" />
-            <p className="paragraph inline">{employmentType}</p>
+      <Link to={`/jobs/${id}`} className="job-item-link">
+        <div className="logo-container">
+          <img
+            src={companyLogoUrl}
+            alt="company logo"
+            className="company-logo"
+          />
+          <div className="role-container">
+            <p className="role">{title}</p>
+            <FaStar className="star-icon" />
+            <span>{rating}</span>
           </div>
         </div>
-        <h2 className="salary">{packagePerAnnum}</h2>
-      </div>
-      <hr />
-      <div className="description-container">
-        <h3 className="description">Description</h3>
-        <p className="desc-text">{jobDescription}</p>
-      </div>
+        <div className="location-employment-salary-container">
+          <div className="flex">
+            <div className="location-container flex">
+              <MdLocationOn className="icon1" />
+              <p className="paragraph inline">{location}</p>
+            </div>
+            <div className="employment-container flex">
+              <IoBagSharp className="icon1" />
+              <p className="paragraph inline">{employmentType}</p>
+            </div>
+          </div>
+          <h2 className="salary">{packagePerAnnum}</h2>
+        </div>
+        <hr />
+        <div className="description-container">
+          <h3 className="description">Description</h3>
+          <p className="desc-text">{jobDescription}</p>
+        </div>
+      </Link>
     </li>
   )
 }
