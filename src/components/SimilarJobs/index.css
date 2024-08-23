@@ -1,0 +1,10 @@
+@media screen and (min-width: 768px) {
+  .similar-jobs-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .similarJob {
+    width: 30%;
+  }
+}

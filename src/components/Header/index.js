@@ -9,7 +9,7 @@ import './index.css'
 const Header = props => {
   const onClickLogout = () => {
     const {history} = props
-    Cookies.remove('jobby_jwt_token')
+    Cookies.remove('jwt_token')
     history.replace('/login')
   }
 
@@ -23,15 +23,19 @@ const Header = props => {
             className="header-logo"
           />
         </Link>
-        <div className="links-container">
-          <Link to="/" className="">
-            <IoMdHome className="icon" />
-          </Link>
-          <Link to="/jobs" className="">
-            <IoBag className="icon" />
-          </Link>
+        <ul className="links-container">
+          <li>
+            <Link to="/" className="">
+              <IoMdHome className="icon" />
+            </Link>
+          </li>
+          <li>
+            <Link to="/jobs" className="">
+              <IoBag className="icon" />
+            </Link>
+          </li>
           <FiLogOut className="icon" onClick={onClickLogout} />
-        </div>
+        </ul>
       </div>
       <div className="desktop-view">
         <Link to="/">
@@ -41,14 +45,18 @@ const Header = props => {
             className="header-logo"
           />
         </Link>
-        <div className="desktop-links-con">
-          <Link to="/" className="link">
-            Home
-          </Link>
-          <Link to="/jobs" className="link">
-            Jobs
-          </Link>
-        </div>
+        <ul className="desktop-links-con">
+          <li>
+            <Link to="/" className="link">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/jobs" className="link">
+              Jobs
+            </Link>
+          </li>
+        </ul>
         <button type="button" className="logout-button" onClick={onClickLogout}>
           Logout
         </button>

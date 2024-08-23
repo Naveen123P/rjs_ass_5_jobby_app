@@ -2,3 +2,51 @@
   background-color: #000000;
   padding: 1rem;
 }
+.justify-content-between {
+  justify-content: space-between;
+}
+.a {
+  text-decoration: none;
+  font-size: larger;
+  font-weight: 700;
+  color: #6366f1;
+}
+.job-details-container {
+  background-color: #272727;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.skill-img {
+  height: 2.3rem;
+  margin-right: 0.7rem;
+}
+.skills-list {
+  flex-wrap: wrap;
+}
+.skill-item {
+  min-width: 50%;
+}
+.skill-name {
+  font-size: medium;
+}
+.l-a-c-img {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .skill-item {
+    min-width: 33%;
+  }
+  .l-a-c-content {
+    display: flex;
+    align-items: center;
+  }
+  .life-at-company-desc {
+    width: 60%;
+  }
+  .l-a-c-img {
+    width: 40%;
+    padding: 1rem;
+  }
+}

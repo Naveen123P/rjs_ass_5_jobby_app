@@ -28,9 +28,9 @@ const JobCard = props => {
             className="company-logo"
           />
           <div className="role-container">
-            <p className="role">{title}</p>
-            <FaStar className="star-icon" />
-            <span>{rating}</span>
+            <h1 className="role">{title}</h1>
+            <FaStar color="#c67833" className="star-icon" />
+            <p className="span">{rating}</p>
           </div>
         </div>
         <div className="location-employment-salary-container">

@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import {FaSearch} from 'react-icons/fa'
+import {BsSearch} from 'react-icons/bs'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
 import Header from '../Header'
@@ -43,9 +43,9 @@ class Jobs extends Component {
   getJobsList = async () => {
     this.setState({apiStatus: apiStatusConstants.inProgress})
     const {employmentType, minimumPackage, search} = this.state
-    const url = `https://apis.ccbp.in/jobs?employment_type=${employmentType}&minimum_package=${minimumPackage}&search=${search}`
+    const url = `https://apis.ccbp.in/jobs?employment_type=${employmentType.join()}&minimum_package=${minimumPackage}&search=${search}`
 
-    const jwtToken = Cookies.get('jobby_jwt_token')
+    const jwtToken = Cookies.get('jwt_token')
 
     const options = {
       headers: {
@@ -77,13 +77,12 @@ class Jobs extends Component {
         className="failure-img"
       />
       <h1 className="heading">No Jobs Found</h1>
-      <p className="para">We could not find any jobs. Try other filters.</p>
+      <p className="para">We could not find any jobs. Try other filters</p>
     </div>
   )
 
   renderSuccessView = () => {
     const {jobsList} = this.state
-    console.log(jobsList)
     return (
       <>
         {jobsList.length === 0 ? (
@@ -114,7 +113,7 @@ class Jobs extends Component {
       />
       <h1 className="heading">Oops! Something Went Wrong</h1>
       <p className="para">
-        We Cannot seem to find the page you are looking for.
+        We Cannot seem to find the page you are looking for
       </p>
       <button type="button" className="button" onClick={this.getJobsList}>
         Retry
@@ -162,14 +161,37 @@ class Jobs extends Component {
           onChange={this.onChangeSearch}
           className="search-input"
         />
-        <div className="search-icon-container">
+        <button
+          type="button"
+          data-testid="searchButton"
+          className="search-icon-container"
+          onClick={this.getJobsList}
+        >
+          <BsSearch className="search-icon" />{' '}
+        </button>
+        {/* <div className="search-icon-container">
           <FaSearch className="search-icon" onClick={this.getJobsList} />
-        </div>
+        </div> */}
       </div>
     )
   }
 
+  changeEmploymentType = value => {
+    const {employmentType} = this.state
+    if (employmentType.includes(value)) {
+      const updatedList = employmentType.filter(each => value !== each)
+      this.setState({employmentType: updatedList}, this.getJobsList)
+    } else {
+      this.setState(
+        {employmentType: [String(value), ...employmentType]},
+        this.getJobsList,
+      )
+    }
+  }
+
   render() {
+    const {employmentType} = this.state
+    console.log(employmentType.join())
     return (
       <>
         <Header />
@@ -177,7 +199,10 @@ class Jobs extends Component {
           {this.renderInputSearch()}
           <Profile />
           <hr />
-          <FilterJobs changeSalary={this.changeSalary} />
+          <FilterJobs
+            changeEmploymentType={this.changeEmploymentType}
+            changeSalary={this.changeSalary}
+          />
           <hr />
           {this.renderAllApiStatusView()}
         </div>
@@ -185,7 +210,10 @@ class Jobs extends Component {
           <div className="profile-filters-container">
             <Profile />
             <hr />
-            <FilterJobs changeSalary={this.changeSalary} />
+            <FilterJobs
+              changeEmploymentType={this.changeEmploymentType}
+              changeSalary={this.changeSalary}
+            />
           </div>
           <div className="search-jobs-container">
             {this.renderInputSearch()}

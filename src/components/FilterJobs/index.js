@@ -48,22 +48,23 @@ const salaryRangesList = [
 
 const FilterJobs = props => {
   const renderEmploymentType = () => {
-    const {changeSalary} = props
+    const {changeEmploymentType} = props
     return employmentTypesList.map(employment => {
+      const {employmentTypeId, label, uniqueId} = employment
       const onChangeEmployment = () => {
-        changeSalary(employment.salaryRangeId)
+        changeEmploymentType(employmentTypeId)
       }
       return (
-        <div key={employment.uniqueId} className="employment-item-container">
+        <div key={uniqueId} className="employment-item-container">
           <input
             className="checkbox-input"
             type="checkbox"
-            id={employment.employmentTypeId}
-            value={employment.employmentTypeId}
+            id={employmentTypeId}
+            value={employmentTypeId}
             onChange={onChangeEmployment}
           />
-          <label htmlFor={employment.employmentTypeId} className="para">
-            {employment.label}
+          <label htmlFor={employmentTypeId} className="para">
+            {label}
           </label>{' '}
           <br />
         </div>
@@ -74,24 +75,25 @@ const FilterJobs = props => {
   const renderSalaryRanges = () => {
     const {changeSalary} = props
     return salaryRangesList.map(each => {
+      const {uniqueId, salaryRangeId, label} = each
       const onChangeSalary = () => {
-        changeSalary(each.salaryRangeId)
+        changeSalary(salaryRangeId)
       }
       return (
         <div
-          key={each.uniqueId}
+          key={uniqueId}
           className="salary-item-container employment-item-container"
         >
           <input
             className="radio-input checkbox-input"
             type="radio"
-            id={each.salaryRangeId}
+            id={salaryRangeId}
             name="salary"
-            value={each.salaryRangeId}
+            value={salaryRangeId}
             onChange={onChangeSalary}
           />
-          <label htmlFor={each.salaryRangeId} className="para">
-            {each.label}
+          <label htmlFor={salaryRangeId} className="para">
+            {label}
           </label>{' '}
           <br />
         </div>
@@ -110,7 +112,6 @@ const FilterJobs = props => {
         <h1 className="heading">Salary Range</h1>
         {renderSalaryRanges()}
       </div>
-      <hr />
     </>
   )
 }

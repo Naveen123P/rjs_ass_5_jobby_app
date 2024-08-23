@@ -43,6 +43,9 @@ input {
 #username {
   background-color: transparent;
 }
+#username:focus {
+  background-color: transparent;
+}
 
 button {
   margin-top: 1.6rem;

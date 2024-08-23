@@ -19,7 +19,14 @@
 }
 .search-icon-container {
   background-color: #272727;
+  margin: 0em;
   padding: 0.6rem 1rem 0.4rem 1rem;
+  height: 100%;
+}
+
+.search-icon {
+  padding: 0px;
+  margin: 2px 2px 3px 2px;
 }
 
 .loader-container {

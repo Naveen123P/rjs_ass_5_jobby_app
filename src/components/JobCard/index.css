@@ -16,11 +16,12 @@ li {
   height: 5rem;
   margin-right: 0.5rem;
 }
-span {
+.span {
   font-size: x-large;
   margin-left: 5px;
   font-weight: 800;
 }
+
 .role {
   margin: 0px;
   padding: 0%;

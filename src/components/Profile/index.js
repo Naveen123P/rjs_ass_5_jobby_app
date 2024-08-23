@@ -24,7 +24,7 @@ class Profile extends Component {
     this.setState({apiStatus: apiStatuses.inProgress})
     const url = 'https://apis.ccbp.in/profile'
 
-    const jwtToken = Cookies.get('jobby_jwt_token')
+    const jwtToken = Cookies.get('jwt_token')
 
     const options = {
       headers: {
@@ -59,7 +59,7 @@ class Profile extends Component {
     return (
       <div className="success-profile-bg">
         <img src={profileImageUrl} alt="profile" className="profile-img" />
-        <p className="username">{name}</p>
+        <h1 className="username">{name}</h1>
         <p className="short-bio">{shortBio}</p>
       </div>
     )
