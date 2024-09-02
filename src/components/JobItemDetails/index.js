@@ -45,6 +45,7 @@ class JobItemDetails extends Component {
     companyWebsiteUrl: data.company_website_url,
     employmentType: data.employment_type,
     id: data.id,
+    title: data.title,
     jobDescription: data.job_description,
     skills: data.skills.map(each => ({
       imageUrl: each.image_url,
@@ -97,6 +98,7 @@ class JobItemDetails extends Component {
     const {
       companyLogoUrl,
       companyWebsiteUrl,
+      title,
       rating,
       location,
       employmentType,
@@ -115,7 +117,7 @@ class JobItemDetails extends Component {
               className="company-logo"
             />
             <div className="role-container">
-              <p className="role">abc</p>
+              <p className="role">{title}</p>
               <FaStar className="star-icon" />
               <p className="span">{rating}</p>
             </div>

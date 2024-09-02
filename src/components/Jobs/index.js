@@ -78,6 +78,9 @@ class Jobs extends Component {
       />
       <h1 className="heading">No Jobs Found</h1>
       <p className="para">We could not find any jobs. Try other filters</p>
+      <button type="button" className="button" onClick={this.getJobsList}>
+        Retry
+      </button>
     </div>
   )
 
