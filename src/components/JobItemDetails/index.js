@@ -3,7 +3,7 @@ import {FaStar} from 'react-icons/fa'
 import {MdLocationOn} from 'react-icons/md'
 import {IoBagSharp} from 'react-icons/io5'
 import {BsBoxArrowUpRight} from 'react-icons/bs'
- 
+
 import Cookies from 'js-cookie'
 
 import Loader from 'react-loader-spinner'
@@ -117,7 +117,7 @@ class JobItemDetails extends Component {
               className="company-logo"
             />
             <div className="role-container">
-              <p className="role">{title}</p>
+              <h1 className="role">{title}</h1>
               <FaStar className="star-icon" />
               <p className="span">{rating}</p>
             </div>

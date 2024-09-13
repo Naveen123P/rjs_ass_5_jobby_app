@@ -16,13 +16,13 @@ const Header = props => {
   return (
     <>
       <div className="mobile-view">
-        <Link to="/">
+        {/* <Link to="/">
           <img
             src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
             alt="website logo"
             className="header-logo"
           />
-        </Link>
+        </Link> */}
         <ul className="links-container">
           <li>
             <Link to="/" className="">

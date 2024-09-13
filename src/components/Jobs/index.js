@@ -198,7 +198,7 @@ class Jobs extends Component {
     return (
       <>
         <Header />
-        <div className="mobile-jobs-container">
+        {/* <div className="mobile-jobs-container">
           {this.renderInputSearch()}
           <Profile />
           <hr />
@@ -208,7 +208,7 @@ class Jobs extends Component {
           />
           <hr />
           {this.renderAllApiStatusView()}
-        </div>
+        </div> */}
         <div className="desktop-jobs-container">
           <div className="profile-filters-container">
             <Profile />
